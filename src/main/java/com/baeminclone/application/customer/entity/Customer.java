@@ -13,7 +13,7 @@ import javax.persistence.*;
 @Entity
 @Table(name = "customers", uniqueConstraints = {
         @UniqueConstraint(
-                name = "sns",
+                name = "UniqueSnsIdAndProvider",
                 columnNames = { "sns_id", "sns_provider" }
         )
 })
