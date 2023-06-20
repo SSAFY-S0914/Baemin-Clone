@@ -11,7 +11,12 @@ import javax.persistence.*;
 @Getter
 @NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
-@Table(name = "customers")
+@Table(name = "customers", uniqueConstraints = {
+        @UniqueConstraint(
+                name = "sns",
+                columnNames = { "sns_id", "sns_provider" }
+        )
+})
 public class Customer extends BaseEntity {
 
     @Id
@@ -24,10 +29,10 @@ public class Customer extends BaseEntity {
     @Column(nullable = false)
     private String email;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     private String snsId;
 
-    @Column(unique = true, nullable = false)
+    @Column(nullable = false)
     @Enumerated(EnumType.STRING)
     private SnsProvider snsProvider;
 
