@@ -15,16 +15,15 @@ import javax.validation.constraints.NotNull;
 @NoArgsConstructor
 @AllArgsConstructor
 @Entity
+@Table(name = "customers")
 public class Customer extends BaseEntity {
 
     @Id
     @Column(name = "customer_id")
     private Long id;
 
-    @Column(name = "customer_id")
     private String name;
 
-    @Column(name = "customer_email")
     @Email
     private String email;
 
