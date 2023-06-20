@@ -1,17 +1,15 @@
 package com.baeminclone.application.customer.entity;
 
 import com.baeminclone.application.common.entity.BaseEntity;
-import lombok.AllArgsConstructor;
+import lombok.AccessLevel;
+import lombok.Builder;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
-import lombok.Setter;
 
 import javax.persistence.*;
 
 @Getter
-@Setter
-@NoArgsConstructor
-@AllArgsConstructor
+@NoArgsConstructor(access = AccessLevel.PROTECTED)
 @Entity
 @Table(name = "customers")
 public class Customer extends BaseEntity {
@@ -29,4 +27,13 @@ public class Customer extends BaseEntity {
 
     @Enumerated(EnumType.STRING)
     private SnsProvider snsProvider;
+
+    @Builder
+    public Customer(Long id, String name, String email, String snsId, SnsProvider snsProvider) {
+        this.id = id;
+        this.name = name;
+        this.email = email;
+        this.snsId = snsId;
+        this.snsProvider = snsProvider;
+    }
 }
