@@ -24,6 +24,7 @@ public class Customer extends BaseEntity {
     @Column(name = "customer_id")
     private Long id;
 
+    @Column(nullable = false)
     private String name;
 
     @Column(nullable = false)
