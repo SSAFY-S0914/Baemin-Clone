@@ -7,8 +7,6 @@ import lombok.NoArgsConstructor;
 import lombok.Setter;
 
 import javax.persistence.*;
-import javax.validation.constraints.Email;
-import javax.validation.constraints.NotNull;
 
 @Getter
 @Setter
@@ -25,13 +23,10 @@ public class Customer extends BaseEntity {
 
     private String name;
 
-    @Email
     private String email;
 
-    @NotNull
     private String snsId;
 
-    @NotNull
     @Enumerated(EnumType.STRING)
     private SnsProvider snsProvider;
 }
