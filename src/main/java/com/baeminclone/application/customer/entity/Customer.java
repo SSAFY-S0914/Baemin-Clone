@@ -21,10 +21,13 @@ public class Customer extends BaseEntity {
 
     private String name;
 
+    @Column(nullable = false)
     private String email;
 
+    @Column(unique = true, nullable = false)
     private String snsId;
 
+    @Column(unique = true, nullable = false)
     @Enumerated(EnumType.STRING)
     private SnsProvider snsProvider;
 
