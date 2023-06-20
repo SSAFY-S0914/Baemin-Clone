@@ -6,9 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import javax.persistence.Column;
-import javax.persistence.Entity;
-import javax.persistence.Id;
+import javax.persistence.*;
 import javax.validation.constraints.Email;
 import javax.validation.constraints.NotNull;
 
@@ -34,5 +32,6 @@ public class Customer extends BaseEntity {
     private String snsId;
 
     @NotNull
+    @Enumerated(EnumType.STRING)
     private SnsProvider snsProvider;
 }
